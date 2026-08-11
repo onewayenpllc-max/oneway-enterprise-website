@@ -6,361 +6,348 @@
 <title>One Way Enterprise LLC | Dump Truck Hauling — Houston, Texas</title>
 <meta name="description" content="One Way Enterprise LLC — licensed dump truck hauling in the Greater Houston area. Aggregate, dirt, sand, gravel and demolition debris hauling. USDOT 3295462 | MC 1044248. Call 832-997-0707.">
 <style>
-  :root{
-    --navy:#1c070d;
-    --navy-dark:#120408;
-    --steel:#2f5fa8;
-    --steel-lt:#6f9ee0;
-    --blue:#2b5aa0;
-    --blue-lt:#3f74c4;
-    --maroon:#3d0f16;
-    --maroon-lt:#521420;
-    --white:#f4f6f9;
-    --grey:#d6c5c8;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  html,body{height:100%;}
-  body{
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    color:var(--white);
-    background:var(--navy-dark);
-  }
-  img{display:block; max-width:100%;}
-  a{text-decoration:none;}
-
-  /* ---- Header ---- */
-  header{
-    position:fixed; top:0; left:0; right:0; z-index:30;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 5%;
-    background:linear-gradient(180deg, rgba(18,4,8,0.95) 0%, rgba(18,4,8,0.75) 70%, rgba(18,4,8,0) 100%);
-  }
-  .brand{ display:flex; align-items:center; gap:12px; }
-  .brand-mark{
-    width:44px; height:44px; border-radius:50%;
-    background:var(--navy); border:2px solid var(--steel-lt);
-    display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:13px; color:var(--steel-lt); letter-spacing:0.5px;
-  }
-  .brand .name{ font-size:15px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--white); line-height:1.2; }
-  .brand .name small{ display:block; font-size:10px; font-weight:600; letter-spacing:2px; color:var(--steel-lt); margin-top:2px; }
-  nav{ display:flex; align-items:center; gap:30px; }
-  nav a.navlink{ color:var(--grey); font-size:14px; font-weight:500; letter-spacing:0.3px; transition:color .2s; }
-  nav a.navlink:hover{ color:var(--white); }
-  .nav-cta{
-    border:1.5px solid var(--blue-lt); background:var(--blue); color:var(--white);
-    padding:10px 20px; border-radius:30px; font-weight:700; font-size:13.5px; letter-spacing:0.3px;
-  }
-  .nav-cta:hover{ background:var(--blue-lt); }
-
-  /* ---- Hero ---- */
-  .hero{
-    position:relative;
-    height:100vh; min-height:620px;
-    display:flex; align-items:center;
-    overflow:hidden;
-  }
-  .hero-bg{
-    position:absolute; inset:0;
-    background:
-      radial-gradient(circle at 82% 18%, rgba(63,116,196,0.28) 0%, rgba(63,116,196,0) 45%),
-      radial-gradient(circle at 70% 85%, rgba(82,20,32,0.5) 0%, rgba(82,20,32,0) 50%),
-      repeating-linear-gradient(115deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 60px),
-      linear-gradient(160deg, #1c070d 0%, #120408 60%, #1f080f 100%);
-  }
-  .hero-overlay{
-    position:absolute; inset:0;
-    background:
-      linear-gradient(90deg, rgba(18,4,8,0.92) 0%, rgba(18,4,8,0.72) 34%, rgba(18,4,8,0.35) 64%, rgba(18,4,8,0.55) 100%),
-      linear-gradient(0deg, rgba(18,4,8,0.75) 0%, rgba(18,4,8,0.05) 45%);
-  }
-  .hero-content{
-    position:relative; z-index:5;
-    max-width:1360px; width:100%;
-    margin:0 auto; padding:0 5%;
-  }
-  .kicker{
-    display:inline-flex; align-items:center; gap:10px;
-    color:var(--steel-lt); font-size:13px; font-weight:700;
-    letter-spacing:3px; text-transform:uppercase; margin-bottom:22px;
-  }
-  .kicker::before{ content:""; width:34px; height:2px; background:var(--maroon-lt); display:inline-block; }
-  h1{
-    font-size:clamp(34px, 5vw, 68px);
-    font-weight:800; line-height:1.08; letter-spacing:-1px;
-    max-width:820px; margin-bottom:22px;
-  }
-  h1 span{ color:var(--steel-lt); }
-  .sub{
-    font-size:17.5px; line-height:1.6; color:var(--grey);
-    max-width:540px; margin-bottom:36px; font-weight:400;
-  }
-  .cta-row{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:50px; }
-  .btn{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:16px 30px; border-radius:8px; font-weight:700; font-size:15px;
-    letter-spacing:0.3px; transition:transform .2s, box-shadow .2s;
-  }
-  .btn-primary{ background:var(--blue); color:var(--white); box-shadow:0 8px 24px rgba(43,90,160,0.4); }
-  .btn-primary:hover{ transform:translateY(-2px); background:var(--blue-lt); box-shadow:0 12px 28px rgba(43,90,160,0.5); }
-  .btn-ghost{ border:1.5px solid rgba(255,255,255,0.35); color:var(--white); }
-  .btn-ghost:hover{ border-color:var(--white); }
-
-  .stat-row{
-    display:flex; gap:48px; flex-wrap:wrap;
-    padding-top:30px; border-top:1px solid rgba(255,255,255,0.15);
-    max-width:760px;
-  }
-  .stat b{ display:block; font-size:22px; font-weight:800; color:var(--white); }
-  .stat span{ font-size:12px; color:var(--grey); letter-spacing:0.5px; text-transform:uppercase; }
-
-  /* ---- Section shared ---- */
-  section{ padding:88px 5%; }
-  .section-head{ max-width:680px; margin:0 auto 52px; text-align:center; }
-  .section-head .kicker{ justify-content:center; }
-  .section-head h2{ font-size:clamp(28px,3.4vw,42px); font-weight:800; letter-spacing:-0.5px; margin-bottom:14px; }
-  .section-head p{ color:var(--grey); font-size:16px; line-height:1.6; }
-
-  /* ---- Services ---- */
-  .services{ background:var(--navy); }
-  .service-grid{
-    max-width:1200px; margin:0 auto;
-    display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
-  }
-  .service-card{
-    background:rgba(255,255,255,0.03);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:14px; padding:30px 26px;
-  }
-  .service-card .tag{ color:var(--steel-lt); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; display:block; }
-  .service-card h3{ font-size:19px; margin-bottom:10px; font-weight:700; }
-  .service-card p{ font-size:14px; color:var(--grey); line-height:1.6; }
-
-  /* ---- Fleet strip ---- */
-  .fleet{ background:var(--navy-dark); }
-  .fleet-grid{
-    max-width:1100px; margin:0 auto;
-    display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
-  }
-  .fleet-card{
-    background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08);
-    border-radius:14px; padding:34px 26px; text-align:center;
-  }
-  .fleet-card .num{ font-size:34px; font-weight:800; color:var(--steel-lt); margin-bottom:10px; }
-  .fleet-card h3{ font-size:16.5px; font-weight:700; margin-bottom:8px; }
-  .fleet-card p{ font-size:13.5px; color:var(--grey); line-height:1.6; }
-
-  /* ---- Fleet gallery ---- */
-  .gallery{
-    max-width:1280px; margin:52px auto 0;
-    display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:150px; gap:12px;
-  }
-  .gallery a{ display:block; overflow:hidden; border-radius:10px; position:relative; }
-  .gallery img{ width:100%; height:100%; object-fit:cover; transition:transform .4s; }
-  .gallery a:hover img{ transform:scale(1.06); }
-  .g-wide{ grid-column:span 2; grid-row:span 2; }
-  .g-tall{ grid-row:span 2; }
-
-  /* ---- Why us ---- */
-  .why{ background:var(--navy); }
-  .why-wrap{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
-  .why-photo{
-    border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.08);
-    background:
-      radial-gradient(circle at 30% 25%, rgba(63,116,196,0.25) 0%, rgba(63,116,196,0) 45%),
-      radial-gradient(circle at 75% 80%, rgba(82,20,32,0.4) 0%, rgba(82,20,32,0) 50%),
-      linear-gradient(160deg, #1c070d 0%, #120408 100%);
-    min-height:420px; display:flex; align-items:center; justify-content:center; text-align:center; padding:40px;
-  }
-  .why-photo .badge{ font-size:15px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--steel-lt); line-height:2.2; }
-  .why-list{ display:flex; flex-direction:column; gap:26px; }
-  .why-item{ display:flex; gap:18px; }
-  .why-icon{
-    flex:0 0 46px; height:46px; border-radius:10px;
-    background:rgba(59,90,128,0.18); border:1px solid var(--steel);
-    display:flex; align-items:center; justify-content:center;
-    font-weight:800; color:var(--steel-lt); font-size:16px;
-  }
-  .why-item h4{ font-size:16.5px; font-weight:700; margin-bottom:5px; }
-  .why-item p{ font-size:14px; color:var(--grey); line-height:1.6; }
-
-  /* ---- Credentials strip ---- */
-  .creds{
-    background:var(--blue);
-    padding:34px 5%;
-    display:flex; justify-content:center; gap:60px; flex-wrap:wrap; text-align:center;
-  }
-  .creds .item b{ display:block; font-size:15px; letter-spacing:1px; }
-  .creds .item span{ font-size:12px; color:rgba(255,255,255,0.8); letter-spacing:1px; text-transform:uppercase; }
-
-  /* ---- CTA / Contact ---- */
-  .cta-section{
-    background:var(--navy-dark);
-    text-align:center;
-  }
-  .cta-section h2{ font-size:clamp(26px,3.6vw,40px); font-weight:800; margin-bottom:16px; }
-  .cta-section p{ color:var(--grey); max-width:560px; margin:0 auto 34px; font-size:16px; line-height:1.6; }
-  .contact-grid{
-    max-width:760px; margin:44px auto 0;
-    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
-  }
-  .contact-card{
-    background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08);
-    border-radius:12px; padding:22px; text-align:center;
-  }
-  .contact-card span{ display:block; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--steel-lt); margin-bottom:8px; }
-  .contact-card b{ font-size:15px; font-weight:700; color:var(--white); }
-
-  /* ---- Footer ---- */
-  footer{
-    background:var(--navy-dark);
-    padding:34px 5%;
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
-    border-top:1px solid rgba(255,255,255,0.08);
-    font-size:13px; color:var(--grey);
-  }
-  footer .fbrand{ color:var(--white); font-weight:700; }
-  footer .fbrand span{ color:var(--steel-lt); }
-
-  @media (max-width:900px){
-    .service-grid{ grid-template-columns:repeat(2,1fr); }
-    .why-wrap{ grid-template-columns:1fr; }
-    .gallery{ grid-template-columns:repeat(3,1fr); grid-auto-rows:120px; }
-    .g-wide{ grid-column:span 2; }
-    nav{ display:none; }
-    .stat-row{ gap:28px; }
-    .contact-grid{ grid-template-columns:1fr; }
-    .creds{ gap:28px; }
-  }
+:root{
+--black:#000000;
+--ink:#050505;
+--panel:#0e0e0e;
+--card:rgba(255,255,255,0.045);
+--burgundy:#8f2030;
+--burgundy-lt:#b52c40;
+--burgundy-deep:#5c1420;
+--silver:#d0d3d8;
+--silver-dim:#9a9ea4;
+--white:#f4f4f5;
+--grey:#c4c4c8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+html,body{height:100%;}
+body{
+font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+color:var(--white);
+background:var(--black);
+}
+img{display:block; max-width:100%;}
+a{text-decoration:none;}
+.stroke{
+color:var(--burgundy-lt);
+-webkit-text-stroke:1px var(--silver);
+text-stroke:1px var(--silver);
+paint-order:stroke fill;
+}
+header{
+position:fixed; top:0; left:0; right:0; z-index:30;
+display:flex; align-items:center; justify-content:space-between;
+padding:14px 5%;
+background:linear-gradient(180deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.75) 70%, rgba(0,0,0,0) 100%);
+}
+.brand{ display:flex; align-items:center; gap:14px; }
+.brand .logo{
+height:52px; border-radius:8px; border:1px solid var(--silver-dim);
+background:#fff; padding:5px 10px; box-shadow:0 4px 14px rgba(0,0,0,0.5);
+}
+.brand .name{ font-size:15px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--white); line-height:1.2; }
+.brand .name small{ display:block; font-size:10px; font-weight:600; letter-spacing:2px; color:var(--silver-dim); margin-top:2px; }
+nav{ display:flex; align-items:center; gap:30px; }
+nav a.navlink{ color:var(--grey); font-size:14px; font-weight:500; letter-spacing:0.3px; transition:color .2s; }
+nav a.navlink:hover{ color:var(--white); }
+.nav-cta{
+border:1.5px solid var(--silver); background:var(--burgundy); color:var(--white);
+padding:10px 20px; border-radius:30px; font-weight:700; font-size:13.5px; letter-spacing:0.3px;
+}
+.nav-cta:hover{ background:var(--burgundy-lt); }
+.hero{
+position:relative;
+height:100vh; min-height:640px;
+display:flex; align-items:center;
+overflow:hidden;
+}
+.hero-bg{
+position:absolute; inset:0;
+background-image:url('hero.jpg');
+background-size:cover; background-position:center right;
+}
+.hero-overlay{
+position:absolute; inset:0;
+background:
+linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.8) 38%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.65) 100%),
+linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 45%);
+}
+.hero-content{
+position:relative; z-index:5;
+max-width:1360px; width:100%;
+margin:0 auto; padding:0 5%;
+}
+.kicker{
+display:inline-flex; align-items:center; gap:10px;
+color:var(--burgundy-lt); font-size:13px; font-weight:700;
+letter-spacing:3px; text-transform:uppercase; margin-bottom:22px;
+}
+.kicker::before{ content:""; width:34px; height:2px; background:var(--silver); display:inline-block; }
+h1{
+font-size:clamp(36px, 5.2vw, 70px);
+font-weight:800; line-height:1.07; letter-spacing:-1px;
+max-width:860px; margin-bottom:22px; color:var(--white);
+}
+.sub{
+font-size:17.5px; line-height:1.6; color:var(--grey);
+max-width:560px; margin-bottom:36px; font-weight:400;
+}
+.cta-row{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:50px; }
+.btn{
+display:inline-flex; align-items:center; gap:10px;
+padding:16px 30px; border-radius:8px; font-weight:700; font-size:15px;
+letter-spacing:0.3px; transition:transform .2s, box-shadow .2s;
+}
+.btn-primary{ background:var(--burgundy); color:var(--white); border:1.5px solid var(--silver); box-shadow:0 8px 24px rgba(143,32,48,0.45); }
+.btn-primary:hover{ transform:translateY(-2px); background:var(--burgundy-lt); box-shadow:0 12px 28px rgba(143,32,48,0.55); }
+.btn-ghost{ border:1.5px solid rgba(208,211,216,0.5); color:var(--white); }
+.btn-ghost:hover{ border-color:var(--silver); }
+.stat-row{
+display:flex; gap:48px; flex-wrap:wrap;
+padding-top:30px; border-top:1px solid rgba(208,211,216,0.22);
+max-width:760px;
+}
+.stat b{ display:block; font-size:22px; font-weight:800; color:var(--white); }
+.stat span{ font-size:12px; color:var(--silver-dim); letter-spacing:0.5px; text-transform:uppercase; }
+section{ padding:88px 5%; }
+.section-head{ max-width:700px; margin:0 auto 52px; text-align:center; }
+.section-head .kicker{ justify-content:center; }
+.section-head h2{ font-size:clamp(28px,3.4vw,44px); font-weight:800; letter-spacing:-0.5px; margin-bottom:14px; }
+.section-head p{ color:var(--grey); font-size:16px; line-height:1.6; }
+.services{ background:var(--ink); }
+.service-grid{
+max-width:1200px; margin:0 auto;
+display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
+}
+.service-card{
+background:var(--card);
+border:1px solid rgba(208,211,216,0.14);
+border-radius:14px; padding:30px 26px;
+transition:border-color .2s, transform .2s;
+}
+.service-card:hover{ border-color:var(--burgundy-lt); transform:translateY(-3px); }
+.service-card .tag{ color:var(--burgundy-lt); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; display:block; }
+.service-card h3{ font-size:19px; margin-bottom:10px; font-weight:700; color:var(--white); }
+.service-card p{ font-size:14px; color:var(--grey); line-height:1.6; }
+.fleet{ background:var(--black); }
+.fleet-grid{
+max-width:1100px; margin:0 auto 0;
+display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
+}
+.fleet-card{
+background:var(--card); border:1px solid rgba(208,211,216,0.14);
+border-radius:14px; padding:34px 26px; text-align:center;
+}
+.fleet-card .num{ font-size:30px; font-weight:800; color:var(--burgundy-lt); -webkit-text-stroke:0.6px var(--silver-dim); margin-bottom:10px; }
+.fleet-card h3{ font-size:16.5px; font-weight:700; margin-bottom:8px; color:var(--white); }
+.fleet-card p{ font-size:13.5px; color:var(--grey); line-height:1.6; }
+.gallery{
+max-width:1300px; margin:54px auto 0;
+display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:210px; gap:14px;
+}
+.gallery figure{ overflow:hidden; border-radius:12px; position:relative; border:1px solid rgba(208,211,216,0.12); }
+.gallery img{ width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+.gallery figure:hover img{ transform:scale(1.07); }
+.g-wide{ grid-column:span 2; }
+.g-tall{ grid-row:span 2; }
+.why{ background:var(--ink); }
+.why-wrap{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+.why-photo{
+border-radius:14px; overflow:hidden; border:1px solid rgba(208,211,216,0.18);
+min-height:440px; box-shadow:0 18px 50px rgba(0,0,0,0.6);
+}
+.why-photo img{ width:100%; height:100%; min-height:440px; object-fit:cover; }
+.why-list{ display:flex; flex-direction:column; gap:26px; }
+.why-item{ display:flex; gap:18px; }
+.why-icon{
+flex:0 0 46px; height:46px; border-radius:10px;
+background:rgba(143,32,48,0.22); border:1px solid var(--silver-dim);
+display:flex; align-items:center; justify-content:center;
+font-weight:800; color:var(--silver); font-size:16px;
+}
+.why-item h4{ font-size:16.5px; font-weight:700; margin-bottom:5px; color:var(--white); }
+.why-item p{ font-size:14px; color:var(--grey); line-height:1.6; }
+.creds{
+background:linear-gradient(90deg, var(--burgundy-deep), var(--burgundy));
+border-top:1px solid var(--silver-dim); border-bottom:1px solid var(--silver-dim);
+padding:34px 5%;
+display:flex; justify-content:center; gap:60px; flex-wrap:wrap; text-align:center;
+}
+.creds .item b{ display:block; font-size:15px; letter-spacing:1px; color:#fff; }
+.creds .item span{ font-size:12px; color:rgba(255,255,255,0.82); letter-spacing:1px; text-transform:uppercase; }
+.cta-section{ background:var(--black); text-align:center; }
+.cta-section h2{ font-size:clamp(26px,3.6vw,42px); font-weight:800; margin-bottom:16px; }
+.cta-section p{ color:var(--grey); max-width:560px; margin:0 auto 34px; font-size:16px; line-height:1.6; }
+.contact-grid{
+max-width:820px; margin:44px auto 0;
+display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+}
+.contact-card{
+background:var(--card); border:1px solid rgba(208,211,216,0.16);
+border-radius:12px; padding:24px; text-align:center;
+}
+.contact-card span{ display:block; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--burgundy-lt); margin-bottom:8px; }
+.contact-card b{ font-size:15px; font-weight:700; color:var(--white); }
+footer{
+background:var(--black);
+padding:34px 5%;
+display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+border-top:1px solid rgba(208,211,216,0.12);
+font-size:13px; color:var(--grey);
+}
+footer .fbrand{ color:var(--white); font-weight:700; letter-spacing:1px; }
+footer .fbrand span{ color:var(--burgundy-lt); }
+@media (max-width:900px){
+.service-grid{ grid-template-columns:repeat(2,1fr); }
+.why-wrap{ grid-template-columns:1fr; }
+.gallery{ grid-template-columns:repeat(2,1fr); grid-auto-rows:170px; }
+.g-wide{ grid-column:span 2; }
+.g-tall{ grid-row:span 1; }
+nav{ display:none; }
+.stat-row{ gap:28px; }
+.contact-grid{ grid-template-columns:1fr; }
+.creds{ gap:28px; }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="brand">
-    <div class="brand-mark">OWE</div>
-    <div class="name">One Way Enterprise <small>LLC &middot; Houston, TX</small></div>
-  </div>
-  <nav>
-    <a class="navlink" href="#services">Services</a>
-    <a class="navlink" href="#fleet">Fleet</a>
-    <a class="navlink" href="#about">About</a>
-    <a class="navlink" href="#contact">Contact</a>
-    <a href="tel:8329970707" class="nav-cta">Call 832-997-0707</a>
-  </nav>
+<div class="brand">
+<img class="logo" src="logo.png" alt="One Way Enterprise LLC logo">
+<div class="name">One Way Enterprise <small>LLC &middot; Houston, TX</small></div>
+</div>
+<nav>
+<a class="navlink" href="#services">Services</a>
+<a class="navlink" href="#fleet">Fleet</a>
+<a class="navlink" href="#about">About</a>
+<a class="navlink" href="#contact">Contact</a>
+<a href="tel:8329970707" class="nav-cta">Call 832-997-0707</a>
+</nav>
 </header>
 
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="kicker">Dump Truck Hauling &middot; Greater Houston Area</div>
-    <h1>Dependable Hauling, <span>One Way At A Time.</span></h1>
-    <p class="sub">One Way Enterprise LLC runs a modern fleet of trucks in all sizes, hauling dirt, sand, gravel, aggregate and demolition debris for contractors, developers and job sites across the Houston area.</p>
-    <div class="cta-row">
-      <a href="tel:8329970707" class="btn btn-primary">Call for a Quote &rarr;</a>
-      <a href="#services" class="btn btn-ghost">See Services</a>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><b>Licensed &amp; Insured</b><span>USDOT 3295462</span></div>
-      <div class="stat"><b>MC 1044248</b><span>Interstate Authority</span></div>
-      <div class="stat"><b>Houston, TX</b><span>Based &amp; Operating</span></div>
-    </div>
-  </div>
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="kicker">Dump Truck Hauling &middot; Greater Houston Area</div>
+<h1>Dependable Hauling, <span class="stroke">One Way At A Time.</span></h1>
+<p class="sub">One Way Enterprise LLC runs a modern fleet of trucks in all sizes, hauling dirt, sand, gravel, aggregate and demolition debris for contractors, developers and job sites across the Houston area.</p>
+<div class="cta-row">
+<a href="tel:8329970707" class="btn btn-primary">Call for a Quote &rarr;</a>
+<a href="#services" class="btn btn-ghost">See Services</a>
+</div>
+<div class="stat-row">
+<div class="stat"><b>Licensed &amp; Insured</b><span>USDOT 3295462</span></div>
+<div class="stat"><b>MC 1044248</b><span>Interstate Authority</span></div>
+<div class="stat"><b>Houston, TX</b><span>Based &amp; Operating</span></div>
+</div>
+</div>
 </section>
 
 <section class="services" id="services">
-  <div class="section-head">
-    <div class="kicker">What We Haul</div>
-    <h2>Hauling Services</h2>
-    <p>Straight, reliable dump truck hauling — trucks that show up and get the material moved.</p>
-  </div>
-  <div class="service-grid">
-    <div class="service-card">
-      <span class="tag">Aggregate</span>
-      <h3>Gravel &amp; Rock Hauling</h3>
-      <p>Delivery and haul-off of gravel, crushed stone and aggregate for construction sites, driveways and quarry runs.</p>
-    </div>
-    <div class="service-card">
-      <span class="tag">Earthwork</span>
-      <h3>Dirt &amp; Sand Hauling</h3>
-      <p>Fill dirt, topsoil and sand hauled in or hauled out for grading, landscaping and site prep jobs.</p>
-    </div>
-    <div class="service-card">
-      <span class="tag">Job Sites</span>
-      <h3>Construction Site Hauling</h3>
-      <p>On-call trucks for active job sites — loaded by your excavator or loader, hauled where it needs to go.</p>
-    </div>
-    <div class="service-card">
-      <span class="tag">Debris</span>
-      <h3>Demolition Debris Hauling</h3>
-      <p>Haul-away for demolition debris after the work is done, keeping job sites clear and moving.</p>
-    </div>
-  </div>
+<div class="section-head">
+<div class="kicker">What We Haul</div>
+<h2><span class="stroke">Hauling Services</span></h2>
+<p>Straight, reliable dump truck hauling — trucks that show up and get the material moved.</p>
+</div>
+<div class="service-grid">
+<div class="service-card">
+<span class="tag">Aggregate</span>
+<h3>Gravel &amp; Rock Hauling</h3>
+<p>Delivery and haul-off of gravel, crushed stone and aggregate for construction sites, driveways and quarry runs.</p>
+</div>
+<div class="service-card">
+<span class="tag">Earthwork</span>
+<h3>Dirt &amp; Sand Hauling</h3>
+<p>Fill dirt, topsoil and sand hauled in or hauled out for grading, landscaping and site prep jobs.</p>
+</div>
+<div class="service-card">
+<span class="tag">Job Sites</span>
+<h3>Construction Site Hauling</h3>
+<p>On-call trucks for active job sites — loaded by your excavator or loader, hauled where it needs to go.</p>
+</div>
+<div class="service-card">
+<span class="tag">Debris</span>
+<h3>Demolition Debris Hauling</h3>
+<p>Haul-away for demolition debris after the work is done, keeping job sites clear and moving.</p>
+</div>
+</div>
 </section>
 
 <section class="fleet" id="fleet">
-  <div class="section-head">
-    <div class="kicker">Our Trucks</div>
-    <h2>A Fleet Built to Work</h2>
-    <p>All sizes of dump trucks, maintained and ready — real trucks, real jobs, around Houston.</p>
-  </div>
-  <div class="fleet-grid">
-    <div class="fleet-card"><div class="num">All Sizes</div><h3>Dump Trucks</h3><p>From standard loads to oversized hauls, we've got the right truck for the job.</p></div>
-    <div class="fleet-card"><div class="num">Kenworth</div><h3>Maintained Fleet</h3><p>Kept in top shape and ready to run, every day.</p></div>
-    <div class="fleet-card"><div class="num">Houston</div><h3>Based &amp; Ready</h3><p>Local trucks, ready to respond fast across the Houston area.</p></div>
-  </div>
+<div class="section-head">
+<div class="kicker">Our Trucks</div>
+<h2><span class="stroke">A Fleet Built to Work</span></h2>
+<p>All sizes of dump trucks, maintained and ready — real trucks, real jobs, around Houston.</p>
+</div>
+<div class="fleet-grid">
+<div class="fleet-card"><div class="num">All Sizes</div><h3>Dump Trucks</h3><p>From standard loads to oversized hauls, we've got the right truck for the job.</p></div>
+<div class="fleet-card"><div class="num">Kenworth</div><h3>Maintained Fleet</h3><p>Kept in top shape and ready to run, every day.</p></div>
+<div class="fleet-card"><div class="num">Houston</div><h3>Based &amp; Ready</h3><p>Local trucks, ready to respond fast across the Houston area.</p></div>
+</div>
+<div class="gallery">
+<figure class="g-wide g-tall"><img src="g1.jpg" alt="One Way Enterprise dump truck"></figure>
+<figure><img src="g2.jpg" alt="Dumping a load of gravel"></figure>
+<figure><img src="g3.jpg" alt="Loading a dump truck at a job site"></figure>
+<figure class="g-tall"><img src="g6.jpg" alt="One Way Enterprise Kenworth dump truck"></figure>
+<figure><img src="g4.jpg" alt="Dump truck on site"></figure>
+<figure><img src="g5.jpg" alt="Hauling aggregate at the quarry"></figure>
+<figure class="g-wide"><img src="g7.jpg" alt="Dumping a load of dirt"></figure>
+<figure><img src="g8.jpg" alt="One Way Enterprise dump truck, front view"></figure>
+</div>
 </section>
 
 <section class="why" id="about">
-  <div class="why-wrap">
-    <div class="why-photo">
-      <div class="badge">ONE WAY<br>ENTERPRISE<br>LLC</div>
-    </div>
-    <div class="why-list">
-      <div class="kicker">Why One Way Enterprise</div>
-      <div class="why-item">
-        <div class="why-icon">✓</div>
-        <div><h4>Licensed &amp; Insured</h4><p>Operating under USDOT 3295462 and MC 1044248 — a legitimate, properly registered hauling operation.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">✓</div>
-        <div><h4>Hauling Specialists</h4><p>Dependable trucks and drivers who know how to get the job done right, on time.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">✓</div>
-        <div><h4>Modern Fleet</h4><p>All sizes of trucks kept ready for aggregate, dirt, sand and debris hauling.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">✓</div>
-        <div><h4>Houston-Based</h4><p>Local to the Greater Houston area and ready to work with contractors, developers and job sites nearby.</p></div>
-      </div>
-    </div>
-  </div>
+<div class="why-wrap">
+<div class="why-photo">
+<img src="about-decal.jpg" alt="One Way Enterprise LLC truck door — USDOT 3295462, MC 1044248">
+</div>
+<div class="why-list">
+<div class="kicker">Why One Way Enterprise</div>
+<div class="why-item">
+<div class="why-icon">&#10003;</div>
+<div><h4>Licensed &amp; Insured</h4><p>Operating under USDOT 3295462 and MC 1044248 — a legitimate, properly registered hauling operation.</p></div>
+</div>
+<div class="why-item">
+<div class="why-icon">&#10003;</div>
+<div><h4>Hauling Specialists</h4><p>Dependable trucks and drivers who know how to get the job done right, on time.</p></div>
+</div>
+<div class="why-item">
+<div class="why-icon">&#10003;</div>
+<div><h4>Modern Fleet</h4><p>All sizes of trucks kept ready for aggregate, dirt, sand and debris hauling.</p></div>
+</div>
+<div class="why-item">
+<div class="why-icon">&#10003;</div>
+<div><h4>Houston-Based</h4><p>Local to the Greater Houston area and ready to work with contractors, developers and job sites nearby.</p></div>
+</div>
+</div>
+</div>
 </section>
 
 <div class="creds">
-  <div class="item"><b>USDOT 3295462</b><span>US DOT Number</span></div>
-  <div class="item"><b>MC 1044248</b><span>Motor Carrier Authority</span></div>
-  <div class="item"><b>Houston, Texas</b><span>Based &amp; Operating</span></div>
+<div class="item"><b>USDOT 3295462</b><span>US DOT Number</span></div>
+<div class="item"><b>MC 1044248</b><span>Motor Carrier Authority</span></div>
+<div class="item"><b>Houston, Texas</b><span>Based &amp; Operating</span></div>
 </div>
 
 <section class="cta-section" id="contact">
-  <h2>Need a Truck on Your Job?</h2>
-  <p>Call or email One Way Enterprise LLC to get a hauling quote for your job site, project or delivery.</p>
-  <a href="tel:8329970707" class="btn btn-primary">Call 832-997-0707</a>
-  <div class="contact-grid">
-    <div class="contact-card"><span>Phone</span><b><a href="tel:8329970707" style="color:inherit;">832-997-0707</a></b></div>
-    <div class="contact-card"><span>Email</span><b><a href="mailto:onewayenp@yahoo.com" style="color:inherit;">onewayenp@yahoo.com</a></b></div>
-    <div class="contact-card"><span>Location</span><b>Houston, TX</b></div>
-  </div>
+<div class="kicker" style="justify-content:center;">Get In Touch</div>
+<h2><span class="stroke">Need a Truck on Your Job?</span></h2>
+<p>Call or email One Way Enterprise LLC to get a hauling quote for your job site, project or delivery.</p>
+<a href="tel:8329970707" class="btn btn-primary">Call 832-997-0707</a>
+<div class="contact-grid">
+<div class="contact-card"><span>Phone</span><b><a href="tel:8329970707" style="color:inherit;">832-997-0707</a></b></div>
+<div class="contact-card"><span>Email</span><b><a href="mailto:onewayenp@yahoo.com" style="color:inherit;">onewayenp@yahoo.com</a></b></div>
+<div class="contact-card"><span>Location</span><b>Houston, TX</b></div>
+</div>
 </section>
 
 <footer>
-  <div class="fbrand">One Way <span>Enterprise</span> LLC</div>
-  <div>USDOT 3295462 &middot; MC 1044248 &middot; Houston, Texas</div>
-  <div>&copy; 2026 One Way Enterprise LLC. All rights reserved.</div>
+<div class="fbrand">One Way <span>Enterprise</span> LLC</div>
+<div>USDOT 3295462 &middot; MC 1044248 &middot; Houston, Texas</div>
+<div>&copy; 2026 One Way Enterprise LLC. All rights reserved.</div>
 </footer>
 
 </body>
