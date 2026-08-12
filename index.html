@@ -148,6 +148,8 @@ footer{background:var(--black);padding:44px 5% 90px;border-top:1px solid rgba(20
 .mobilebar .quote-btn{background:transparent;color:#fff;border:1.5px solid var(--silver-dim);}
 
 @media (max-width:900px){
+.hero{height:auto;min-height:auto;padding:104px 0 56px;}
+.fleet-grid{grid-template-columns:1fr;max-width:460px;}
 .service-grid{grid-template-columns:repeat(2,1fr);}
 .why-wrap{grid-template-columns:1fr;}
 .gallery{grid-template-columns:repeat(2,1fr);}
@@ -157,6 +159,13 @@ nav{display:none;}
 .stat-row{gap:24px;}
 .contact-grid{grid-template-columns:1fr;}
 .creds{gap:26px;}
+}
+@media (max-width:600px){
+.service-grid{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto;}
+.stat-row{gap:18px 30px;}
+h1{font-size:31px;}
+section{padding:64px 6%;}
+.who,.creds{padding-left:6%;padding-right:6%;}
 }
 @media (max-width:760px){
 .mobilebar{display:flex;}
